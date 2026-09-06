@@ -25,25 +25,18 @@ PacketStreamer is a blazing-fast, real-time network monitoring tool built with a
 
 ---
 
-## 🏗️ Architecture
-
-```text
-┌─────────────────┐     ┌──────────────────────┐     ┌─────────────────────┐
-│   Npcap Driver  │────▶│  C++ Core (DLL)      │────▶│  C# WPF Dashboard   │
-│   (Kernel)      │     │  - Raw Capture       │     │  - Real-time Charts │
-│                 │     │  - Header Parsing    │     │  - Ring Buffer Mgmt │
-└─────────────────┘     │  - Background Queue  │     │  - Advanced Filtering│
-                        └──────────────────────┘     └─────────────────────┘
-
 ## 📦 Prerequisites
+
 Windows 10/11 (Administrator privileges required for packet capture).
 Npcap: Install the latest version. Make sure to check "Install Npcap in WinPcap API-compatible Mode" during installation.
 Npcap SDK: Required only if you want to recompile the C++ core.
 Visual Studio 2022 with C++ Desktop Development and .NET Desktop Development workloads.
 .NET 8.0 SDK.
+
 ---
 
 ## 🛠️ How to Build
+
 Clone the repository:
 bash
 
@@ -59,6 +52,7 @@ Run the Dashboard:
 Set PacketStreamer_Dashboard as the Startup Project.
 Run Visual Studio as Administrator (Required for Npcap access).
 Press F5 to start capturing!
+
 ---
 
 ## 📸 Screenshots
@@ -70,18 +64,35 @@ Press F5 to start capturing!
 | Top Talkers & Time Series | Hex/ASCII Packet Inspector |
 | :---: | :---: |
 | ![Top Talkers](screenshots/toptalkers.png) | ![Hex Dump](screenshots/hexdump.png) |
+
 ---
 
 ## ⚠️ Important Notes
+
 HTTPS Encryption: Like all standard packet sniffers, PacketStreamer can only inspect the payload of unencrypted traffic (e.g., HTTP Port 80, DNS Port 53). HTTPS (Port 443) payload is encrypted, though TLS SNI (domain names) can still be extracted from the Client Hello handshake.
 Administrator Rights: The application must be run as Administrator to access the Npcap driver.
+
 ---
 
 ## 🤝 Contributing
+
 Contributions, issues, and feature requests are welcome! Feel free to check the issues page.
+
 ---
 
 ## 📜 License
 This project is licensed under the MIT License - see the LICENSE file for details.
 Made with ❤️ by [Mr Zakarya]
 ---
+
+
+## 🏗️ Architecture
+
+```text
+┌─────────────────┐     ┌──────────────────────┐     ┌─────────────────────┐
+│   Npcap Driver  │────▶│  C++ Core (DLL)      │────▶│  C# WPF Dashboard   │
+│   (Kernel)      │     │  - Raw Capture       │     │  - Real-time Charts │
+│                 │     │  - Header Parsing    │     │  - Ring Buffer Mgmt │
+└─────────────────┘     │  - Background Queue  │     │  - Advanced Filtering│
+                        └──────────────────────┘     └─────────────────────┘
+
