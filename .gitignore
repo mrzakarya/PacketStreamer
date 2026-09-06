@@ -1,0 +1,30 @@
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Npcap SDK (اگر در ریپازیتوری است، بهتر است نباشد و در README لینک داده شود)
+npcap-sdk-*.zip
+
+# Captured Files (فایل‌های ذخیره شده توسط کاربر)
+CapturedFiles/
+*.pcap
+*.csv
